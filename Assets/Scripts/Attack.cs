@@ -84,7 +84,7 @@ public class Attack : MonoBehaviour
             anim.SetBool("Run", false);
             anim.SetBool("Head", true);
 
-            GetComponentInChildren<UnlockAttack>().AtiveAttack();
+            GetComponentInChildren<UnlockHeadAttack>().AtiveAttack();
             cooldownAttack.Play(0.5f); // Duração do Attack (Dura um segundo)
         }
         
@@ -92,7 +92,7 @@ public class Attack : MonoBehaviour
         {
             anim.SetBool("Run", true);
             anim.SetBool("Head", false);
-            GetComponentInChildren<UnlockAttack>().DesativeAttack();
+            GetComponentInChildren<UnlockHeadAttack>().DesativeAttack();
         }
     }
 

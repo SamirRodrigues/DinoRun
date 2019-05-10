@@ -9,25 +9,25 @@ public class UnlockHeadAttack : MonoBehaviour
 
     public void Start()
     {
-        Collider = GetComponent<Collider2D>(); // Recebe o collider
-        Collider.enabled = false;
+        Collider = GetComponent<Collider2D>(); // Recebe o colisor  
+        Collider.enabled = false; //Desativa o colisor
     }
 
-    public void AtiveAttack()
+    public void AtiveAttack() // Quando chamado
     {
-        Collider.enabled = true;
+        Collider.enabled = true; //Ativa o colisor
     }
 
-    public void DesativeAttack()
+    public void DesativeAttack() //Quando chamado
     {
-        Collider.enabled = false;
+        Collider.enabled = false; //Desativa o colisor
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) 
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy")) //Caso umobjeto com tag Enemy entre no meu trigger
         {
-            collision.GetComponent<Enemy>().Kill();
+            collision.GetComponent<Enemy>().Kill(); //Chama a função Kill do cod Enemy (mata meu enemy)
         }
     }
 

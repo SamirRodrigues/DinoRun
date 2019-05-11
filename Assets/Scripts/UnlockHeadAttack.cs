@@ -30,5 +30,6 @@ public class UnlockHeadAttack : MonoBehaviour
             collision.GetComponent<Enemy>().Kill(); //Chama a função Kill do cod Enemy (mata meu enemy)
         }
     }
+  
 
 }

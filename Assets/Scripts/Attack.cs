@@ -104,6 +104,12 @@ public class Attack : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(attackPosHead.position, attackRange);
     }   
+
+    public void topadaAnim()
+    {
+        anim.SetTrigger("Topada");
+        Debug.Log("ATIVOU");
+    }
     
 }
 

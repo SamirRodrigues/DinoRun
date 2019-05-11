@@ -22,17 +22,17 @@ public class Instantiate : MonoBehaviour
     IEnumerator Instance()
     {
 
-        choice();                                             // Spawna meus Prefabs de maneira randomica 
+        Choice();                                             // Spawna meus Prefabs de maneira randômica 
         float a = Random.Range(2f , 6f);                      // Cria um valor randomico entre 2 e 6
         yield return new WaitForSeconds(a);                   // Espera um tempo em segundo para poder executar a próxima linha, usando por base o valor criado na linha anterior
 
         StartCoroutine(Instance());                           // Chama novamente a função
     }
 
-    private void choice()
+    private void Choice()
     {
         float c = Random.Range(1f , 3f); // Gera um número aleatório de 1 e 3
-        Debug.Log(c);
+        
         if(c >= 1 && c <= 2) // Se criar um valor entre 1 e 2
         {
             Instantiate(body1, spawn1.position, spawn1.rotation); // Spawna Prefab 1

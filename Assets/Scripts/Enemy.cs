@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
     // Animação
     private Animator anim;
+    public Renderer Object;
 
     // Cooldown config
     public CooldownManeger timeDurationAttack = new CooldownManeger();
@@ -65,4 +66,5 @@ public class Enemy : MonoBehaviour
         morto = true; // Informa que o inimigo morreu
         timeDurationAttack.Play(3);   // E informa o tempo que a animação vai durar - Animação vai durar 3 segundos
     }
+    
 }

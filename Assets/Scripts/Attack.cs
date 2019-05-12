@@ -19,8 +19,6 @@ public class Attack : MonoBehaviour
     
     public Animator anim;
 
-
-
     //Cooldown para verificar o tempo de duração do ataque
 
     public CooldownManeger cooldownAttack = new CooldownManeger();
@@ -57,47 +55,59 @@ public class Attack : MonoBehaviour
 
     void Kick()
     {
-        if (Input.GetKeyDown (KeyCode.W) /* && cooldownAttack.IsFinish() == false */)
+        if (Input.GetKeyDown (KeyCode.W)) //Caso precione a tecla W
         {
+
+            // Inicia a animação de Kick
             anim.SetBool("Run", false);
             anim.SetBool("Kick", true);
 
+            // Ativa o colisor do Chute
             GetComponentInChildren<UnlockAttack>().AtiveAttack();
+
+            // Inicia um cooldown para poder desativar o colisor
             cooldownAttack.Play(0.5f); // Duração do Attack (Dura 0,5 segundos)
 
         }
 
-        if (cooldownAttack.IsFinish() == true)
+        if (cooldownAttack.IsFinish() == true) // Verifica se o tempo do cooldown acabou
         {
+            // Inicia a animação de corrida
             anim.SetBool("Run", true);
             anim.SetBool("Kick", false);
 
-            GetComponentInChildren<UnlockAttack>().DesativeAttack();
+            GetComponentInChildren<UnlockAttack>().DesativeAttack(); // Desativa o colisor do ataque
         }
         
     }
 
     void HeadAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Q) /* && cooldownAttack.IsFinish() == false */)
-        {            
+        if (Input.GetKeyDown(KeyCode.Q))//Caso precione a tecla Q
+        {
+            // Inicia a animação de HeadButt (cabeçada)
             anim.SetBool("Run", false);
             anim.SetBool("Head", true);
 
+            // Ativa o colisor da Cabeçada
             GetComponentInChildren<UnlockHeadAttack>().AtiveAttack();
+
+            // Inicia um cooldown para poder desativar o colisor
             cooldownAttack.Play(0.5f); // Duração do Attack (Dura 0,5 segundos)
         }
         
-        if (cooldownAttack.IsFinish() == true)
+        if (cooldownAttack.IsFinish() == true) // Verifica se o tempo do cooldown acabou
         {
+            // Inicia a animação de corrida
             anim.SetBool("Run", true);
             anim.SetBool("Head", false);
-            GetComponentInChildren<UnlockHeadAttack>().DesativeAttack();
+
+            GetComponentInChildren<UnlockHeadAttack>().DesativeAttack(); // Desativa o colisor do ataque
         }
     }
 
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmosSelected() // Cria um Gizmo na tela apra que seja possivel ver o a área do colisor mesmo quando ele estiver desativado
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPosKick.position, attackRange);
@@ -107,7 +117,7 @@ public class Attack : MonoBehaviour
 
     public void topadaAnim()
     {
-        anim.SetTrigger("Topada");        
+        anim.SetTrigger("Topada");         // Inicia a animação da Topada
     }
 
    

@@ -16,11 +16,13 @@ public class Attack : MonoBehaviour
 
     // Sistema de pontuação
 
-    private ScoreManeger theScoreManager;
+    public ScoreManeger theScoreManager;
+
+    
 
 
     //Animação
-    
+
     public Animator anim;
 
     //Cooldown para verificar o tempo de duração do ataque
@@ -32,7 +34,6 @@ public class Attack : MonoBehaviour
     {       
         anim = GetComponent<Animator>();
 
-        theScoreManager = FindObjectOfType<ScoreManeger>();
     }
 
 
@@ -130,9 +131,10 @@ public class Attack : MonoBehaviour
     public void topadaAnim()
     {
         anim.SetTrigger("Topada");         // Inicia a animação da Topada
+        //CHAMA O BOSS
     }
 
-   
+
 }
 
 

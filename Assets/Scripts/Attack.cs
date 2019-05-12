@@ -14,6 +14,10 @@ public class Attack : MonoBehaviour
     public int damage; // Variável que verifica se o personagem deu dano ou não
     public bool vivo = true;
 
+    // Sistema de pontuação
+
+    private ScoreManeger theScoreManager;
+
 
     //Animação
     
@@ -26,7 +30,9 @@ public class Attack : MonoBehaviour
     
     void Start()
     {       
-        anim = GetComponent<Animator>();               
+        anim = GetComponent<Animator>();
+
+        theScoreManager = FindObjectOfType<ScoreManeger>();
     }
 
 
@@ -37,7 +43,13 @@ public class Attack : MonoBehaviour
         {
             TakeDamage(vivo);
             Kick();
-            HeadAttack();            
+            HeadAttack();
+            theScoreManager.scoreIncreasing = true;
+        }
+        else
+        {
+            theScoreManager.scoreIncreasing = false;
+            theScoreManager.scoreCount = 0;
         }
     }
 

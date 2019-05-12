@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // public Rigidbody2D GroundEnemy;
-    public float vel = 3f;
+    public float vel = 3f;    
 
     private bool morto = false;
     public Collider2D e_Ground; // Responsável por permitir editar o collider
@@ -35,12 +35,13 @@ public class Enemy : MonoBehaviour
         if (AnotherObj.gameObject.CompareTag("Player"))  // Se colidir com um player
         { 
             //Destroy(AnotherObj.gameObject);              // Destroi player
+
         }
     }
 
     public void Move() // Irá controlar os movimentos do personagem
-    {     
-
+    {
+        
         if (morto == true) // Se tiver morto 
         {
             anim.SetTrigger("Death");               // Animação de morto
@@ -66,5 +67,5 @@ public class Enemy : MonoBehaviour
         morto = true; // Informa que o inimigo morreu
         timeDurationAttack.Play(3);   // E informa o tempo que a animação vai durar - Animação vai durar 3 segundos
     }
-    
+        
 }

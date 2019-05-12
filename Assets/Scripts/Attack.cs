@@ -24,9 +24,8 @@ public class Attack : MonoBehaviour
     //Cooldown para verificar o tempo de duração do ataque
 
     public CooldownManeger cooldownAttack = new CooldownManeger();
-    
-   
 
+    
     void Start()
     {       
         anim = GetComponent<Animator>();               
@@ -35,6 +34,7 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
+            
         if (vivo == true)
         {
             TakeDamage(vivo);
@@ -63,7 +63,7 @@ public class Attack : MonoBehaviour
             anim.SetBool("Kick", true);
 
             GetComponentInChildren<UnlockAttack>().AtiveAttack();
-            cooldownAttack.Play(0.5f); // Duração do Attack (Dura um segundo)
+            cooldownAttack.Play(0.5f); // Duração do Attack (Dura 0,5 segundos)
 
         }
 
@@ -85,7 +85,7 @@ public class Attack : MonoBehaviour
             anim.SetBool("Head", true);
 
             GetComponentInChildren<UnlockHeadAttack>().AtiveAttack();
-            cooldownAttack.Play(0.5f); // Duração do Attack (Dura um segundo)
+            cooldownAttack.Play(0.5f); // Duração do Attack (Dura 0,5 segundos)
         }
         
         if (cooldownAttack.IsFinish() == true)
@@ -107,10 +107,10 @@ public class Attack : MonoBehaviour
 
     public void topadaAnim()
     {
-        anim.SetTrigger("Topada");
-        Debug.Log("ATIVOU");
+        anim.SetTrigger("Topada");        
     }
-    
+
+   
 }
 
 

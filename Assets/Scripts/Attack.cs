@@ -16,14 +16,15 @@ public class Attack : MonoBehaviour
 
     // Sistema de pontuação
 
-    public ScoreManeger theScoreManager;
-
-    
-
+    public ScoreManeger theScoreManager; 
 
     //Animação
 
     public Animator anim;
+
+    //Audio Manager
+
+    public AudioSource audioSrc;
 
     //Cooldown para verificar o tempo de duração do ataque
 
@@ -33,6 +34,7 @@ public class Attack : MonoBehaviour
     void Start()
     {       
         anim = GetComponent<Animator>();
+        audioSrc = GetComponent<AudioSource>();
 
     }
 
@@ -42,15 +44,21 @@ public class Attack : MonoBehaviour
             
         if (vivo == true)
         {
-            TakeDamage(vivo);
             Kick();
             HeadAttack();
             theScoreManager.scoreIncreasing = true;
+
+            if (!audioSrc.isPlaying) // Se o áudio não estiver tocando ainda
+            {
+                audioSrc.Play(); // Toca o som de Walk
+            }
+            
         }
         else
         {
-            theScoreManager.scoreIncreasing = false;
-            theScoreManager.scoreCount = 0;
+            theScoreManager.scoreIncreasing = false; // Para de incrementar a pontuação            
+
+            audioSrc.Stop(); // Para de tocar o som de Walk
         }
     }
 
@@ -70,7 +78,6 @@ public class Attack : MonoBehaviour
     {
         if (Input.GetKeyDown (KeyCode.W)) //Caso precione a tecla W
         {
-
             // Inicia a animação de Kick
             anim.SetBool("Run", false);
             anim.SetBool("Kick", true);

@@ -15,6 +15,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject hiScoreUIText; // Responsável por ativar e desativar o gameObject (Nesse caso, a janela de Game Over)
 
 
+    private void Start()
+    {
+        Time.timeScale = 1f; //Tempo roda normalmente
+        // Foi adicionado pois depois da morte do player o tempo congelava e ao recomeçar a partida o tempo estava freezado
+    }
 
     void Update()
     {
@@ -76,10 +81,10 @@ public class PauseMenu : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverUI.SetActive(true); // Ativa o gameObject GameOverUI
-        scoreUIText.SetActive(false);   // Desativa o gameObject do Score
-        hiScoreUIText.SetActive(false);   // Desativa o gameObject do HighScore
-        Time.timeScale = 0f;        // Congela o tempo
+        gameOverUI.SetActive(true);         // Ativa o gameObject GameOverUI
+        scoreUIText.SetActive(false);       // Desativa o gameObject do Score
+        hiScoreUIText.SetActive(false);     // Desativa o gameObject do HighScore
+        Time.timeScale = 0f;                // Congela o tempo
     }
 
 

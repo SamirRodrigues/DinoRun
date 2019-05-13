@@ -11,8 +11,7 @@ public class ScoreManeger : MonoBehaviour
 
     //Variáveis que vão armazenar as pontuações
 
-    public float scoreCount; //Score atual que varia conforme a partida anda
-    public float endScore; // Score final, quando o player morre
+    public float scoreCount; //Score atual que varia conforme a partida anda   
     public float hiScoreCount; //High Score
 
 
@@ -37,15 +36,11 @@ public class ScoreManeger : MonoBehaviour
         { 
             scoreCount += pointsPerSeconds * Time.deltaTime; //Logica para acrescentar pontos
         }
-        else
-        {
-            endScore = scoreCount; //Armazena a informação de pontos no fim do jogo
-            Debug.Log(endScore);
-        }
-        //hiScoreCount = 0; //Reset HighScore
+        
+        hiScoreCount = 0; //Reset HighScore
         if (scoreCount > hiScoreCount) // Define novo highScore
         {
-            hiScoreCount = scoreCount;
+            //hiScoreCount = scoreCount;
             PlayerPrefs.SetFloat("HighScore", hiScoreCount); //Armaneza highScore no pc
         }
 

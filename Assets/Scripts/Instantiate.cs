@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Instantiate : MonoBehaviour
 {
+    //Variável para controlar o spawner
+    public bool Ative = true;
 
     public Rigidbody2D body1;   // Prefab 1
     public Rigidbody2D body2;   // Prefab 2
@@ -29,17 +31,30 @@ public class Instantiate : MonoBehaviour
         StartCoroutine(Instance());                           // Chama novamente a função
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Ative = !Ative;
+        }
+
+    }
+
     private void Choice()
     {
-        float c = Random.Range(1f , 3f); // Gera um número aleatório de 1 e 3
-        
-        if(c >= 1 && c <= 2) // Se criar um valor entre 1 e 2
-        {
-            Instantiate(body1, spawn1.position, spawn1.rotation); // Spawna Prefab 1
-        }
-        else // Se criar um valor maior que 2 e menor que 3
-        {
-            Instantiate(body2, spawn2.position, spawn2.rotation); // Spawna Prefab 2
+       
+        if (Ative == true) {
+            float c = Random.Range(1f, 3f); // Gera um número aleatório de 1 e 3
+
+            if (c >= 1 && c <= 2) // Se criar um valor entre 1 e 2
+            {
+                Instantiate(body1, spawn1.position, spawn1.rotation); // Spawna Prefab 1
+            }
+            else // Se criar um valor maior que 2 e menor que 3
+            {
+                Instantiate(body2, spawn2.position, spawn2.rotation); // Spawna Prefab 2
+            }
+
         }
     }
     

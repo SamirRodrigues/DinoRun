@@ -6,15 +6,30 @@ public class KillPlayer : MonoBehaviour
 {
     public PauseMenu gameOverAtive;
 
+    public Attack killPlayer;
+
+    public ScoreManeger theScoreManager;
+
+    private bool vivo = false;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy")) // Caso um objeto com tag Enemy entre no meu trigger
         {
-            // collision.GetComponent<Enemy>().AumentaVel(speedLVL);   // Aumenta a velocidade geral dos meus inimigos para a velocidade de speedLVL
+            collision.GetComponent<Enemy>().Kill();
 
-            gameOverAtive.gameIsOver = true; // Chama tela de Game Over
-
+            killPlayer.TakeDamage(vivo);
+            
+            StartCoroutine(Instance());   
         }
+    }
+
+    IEnumerator Instance()
+    {
+        yield return new WaitForSeconds(0.6f);  // Espera um tempo em segundo para poder executar a próxima linha, usando por base o valor criado na linha anterior
+        gameOverAtive.gameIsOver = true; // Chama tela de Game Over
+        yield return new WaitForSeconds(1f);
+        theScoreManager.scoreCount = 0; // Reseta o Score para a próxima partida
     }
 }

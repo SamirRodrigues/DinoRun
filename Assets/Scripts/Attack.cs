@@ -6,18 +6,13 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    //Boss interation
-
-    public IABoss boss; // Interações com o boss
-    public GameObject Player;
-
-    //Enemy interation
 
     public Transform attackPosKick; // Posição do ataque kick
     public Transform attackPosHead; // Posição do ataque head
     public LayerMask whatIsEnemy; // O que é inimigo (Quem eu vou atacar)
     public float attackRange; // Alcance do ataque
-    public bool vivo = true; // Variável que verifica se o personagem está vivo ou não
+    public int damage; // Variável que verifica se o personagem deu dano ou não
+    public bool vivo = true;
 
     // Sistema de pontuação
 
@@ -143,9 +138,10 @@ public class Attack : MonoBehaviour
     public void topadaAnim()
     {
         anim.SetTrigger("Topada");         // Inicia a animação da Topada
-        boss.missTakesCount += 1;          // Chama o boss
-        boss.move = true;                  // Faz o boss se mover para frente
+        //CHAMA O BOSS
     }
+
+
 }
 
 

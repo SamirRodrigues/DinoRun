@@ -6,8 +6,6 @@ public class KillPlayer : MonoBehaviour
 {
     public PauseMenu gameOverAtive;
 
-    //public IABoss boss;
-
     public Attack killPlayer;
 
     public ScoreManeger theScoreManager;
@@ -27,14 +25,9 @@ public class KillPlayer : MonoBehaviour
         }
     }
 
-    public void KillP() //Responsável por poder Matar o player em outros scripts
+    IEnumerator Instance()
     {
-        StartCoroutine(Instance());
-    }
-
-    public IEnumerator Instance()
-    {
-        yield return new WaitForSeconds(1.5f);  // Espera um tempo em segundo para poder executar a próxima linha, usando por base o valor criado na linha anterior
+        yield return new WaitForSeconds(0.6f);  // Espera um tempo em segundo para poder executar a próxima linha, usando por base o valor criado na linha anterior
         gameOverAtive.gameIsOver = true; // Chama tela de Game Over
         yield return new WaitForSeconds(1f);
         theScoreManager.scoreCount = 0; // Reseta o Score para a próxima partida

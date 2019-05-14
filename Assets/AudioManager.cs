@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     [SerializeField]
-    Sound[] sounds;
+    Sound[] sounds = null;
 
     public bool Loop = false;
 

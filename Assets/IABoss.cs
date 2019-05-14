@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class IABoss : MonoBehaviour
 {
-    
+    private int gambiarra = 0; // Faz com que o som toque uma unica vez, de forma a tirar ele do loop infinito gerado pelo update
+
+
     //Gerenciador de animações
     public Animator anim;
 
@@ -31,11 +33,9 @@ public class IABoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Debug.Log("Dentro do IABoss: " + missTakesCount);
         if (missTakesCount == 2)
         {
-            anim.SetTrigger("KillPlayer");            
+            anim.SetTrigger("KillPlayer");
             kill.KillP();
             player.TakeDamage(false);
             point.AtiveAnim();
@@ -44,8 +44,17 @@ public class IABoss : MonoBehaviour
         }
         else if (missTakesCount == 1)
         {
-
             Walk();
+
+            if (gambiarra == 0)
+            {
+                gambiarra += 1;                
+            }
+            else if (gambiarra == 1)
+            {
+                bossRoar.PlaySound("BossRoar");
+                gambiarra += 1;
+            }
         }
     }
 
@@ -54,25 +63,13 @@ public class IABoss : MonoBehaviour
         missTakesCount += 1;
 
     }
-
     
-
     private void Walk()
     {
-        if (move == true)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, movePosition.position, Time.deltaTime * vel);
-        }        
+        transform.position = Vector3.MoveTowards(transform.position, movePosition.position, Time.deltaTime * vel);                  
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            move = false;
-            bossRoar.PlaySound("BossRoar");
-        }
-    }
+   
 
 
 }

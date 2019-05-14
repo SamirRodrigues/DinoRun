@@ -193,8 +193,7 @@ public class Attack : MonoBehaviour
     public void topadaAnim()
     {
         anim.SetTrigger("Topada");         // Inicia a animação da Topada
-        boss.missTakesCount += 1;          // Chama o boss
-        boss.move = true;                  // Faz o boss se mover para frente
+        boss.missTakesCount += 1;          // Chama o boss      
     }
 }
 

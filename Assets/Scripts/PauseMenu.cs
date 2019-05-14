@@ -81,9 +81,9 @@ public class PauseMenu : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverUI.SetActive(true);         // Ativa o gameObject GameOverUI
-        scoreUIText.SetActive(false);       // Desativa o gameObject do Score
-        hiScoreUIText.SetActive(false);     // Desativa o gameObject do HighScore
+        gameOverUI.SetActive(true);         // Ativa o gameObject GameOverUI -- Puxa janela de GameOver
+        scoreUIText.SetActive(false);       // Desativa o gameObject do Score -- Desativa os valores de Score
+        hiScoreUIText.SetActive(false);     // Desativa o gameObject do HighScore -- Desativa os valores de HighScore
         Time.timeScale = 0f;                // Congela o tempo
     }
 

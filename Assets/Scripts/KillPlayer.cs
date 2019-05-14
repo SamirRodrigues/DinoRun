@@ -15,13 +15,18 @@ public class KillPlayer : MonoBehaviour
     private bool vivo = false; // Informa que o player morreu
 
 
+    private bool a = false;
+
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy")) // Caso um objeto com tag Enemy entre no meu trigger
         {
             collision.GetComponent<Enemy>().Kill();
 
-            //boss.missTakesCount += 1;
+            boss.missTakesCount += 1;
             StartCoroutine(Cooldown());            
 
         }
@@ -34,19 +39,26 @@ public class KillPlayer : MonoBehaviour
 
     public IEnumerator Instance()
     {
-        /*  PAROU DE FUNCIONAR */
-        yield return new WaitForSeconds(1.5f);  // Espera um tempo em segundo para poder executar a próxima linha, usando por base o valor criado na linha anterior
-        gameOverAtive.gameIsOver = true; // Chama tela de Game Over
-        yield return new WaitForSeconds(1f);
-        theScoreManager.scoreCount = 0; // Reseta o Score para a próxima partida
+       
+        yield return new WaitForSeconds(1.5f);  // Espera um tempo em segundos para poder executar a próxima linha
+       
+        a = true;
+       
+        if (a == true)
+        {
+            gameOverAtive.gameIsOver = true; // Chama tela de Game Over
+            yield return new WaitForSeconds(1f);
+            theScoreManager.scoreCount = 0; // Reseta o Score para a próxima partida
+        }
+        
     }
 
     public IEnumerator Cooldown()
     {
-        Debug.Log(boss.missTakesCount);
+       // Debug.Log(boss.missTakesCount);
         yield return new WaitForSeconds(1.5f);
         boss.missTakesCount += 1;
-        Debug.Log(boss.missTakesCount);
+       // Debug.Log(boss.missTakesCount);
         killPlayer.TakeDamage(vivo);
         StartCoroutine(Instance());
     }

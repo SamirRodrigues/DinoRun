@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
 {
-    public PauseMenu gameOverAtive;
+    public PauseMenu gameOverAtive; // Chama a janela de game over
 
-    //public IABoss boss;
+    public IABoss boss; //Interação com o boss
 
-    public Attack killPlayer;
+    public Attack killPlayer; //Interação com o player
 
-    public ScoreManeger theScoreManager;
+    public ScoreManeger theScoreManager; // Interação com o Score
 
-    private bool vivo = false;
+    private bool vivo = false; // Informa que o player morreu
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,9 +21,9 @@ public class KillPlayer : MonoBehaviour
         {
             collision.GetComponent<Enemy>().Kill();
 
-            killPlayer.TakeDamage(vivo);
-            
-            StartCoroutine(Instance());   
+            //boss.missTakesCount += 1;
+            StartCoroutine(Cooldown());            
+
         }
     }
 
@@ -34,9 +34,20 @@ public class KillPlayer : MonoBehaviour
 
     public IEnumerator Instance()
     {
+        /*  PAROU DE FUNCIONAR */
         yield return new WaitForSeconds(1.5f);  // Espera um tempo em segundo para poder executar a próxima linha, usando por base o valor criado na linha anterior
         gameOverAtive.gameIsOver = true; // Chama tela de Game Over
         yield return new WaitForSeconds(1f);
         theScoreManager.scoreCount = 0; // Reseta o Score para a próxima partida
+    }
+
+    public IEnumerator Cooldown()
+    {
+        Debug.Log(boss.missTakesCount);
+        yield return new WaitForSeconds(1.5f);
+        boss.missTakesCount += 1;
+        Debug.Log(boss.missTakesCount);
+        killPlayer.TakeDamage(vivo);
+        StartCoroutine(Instance());
     }
 }

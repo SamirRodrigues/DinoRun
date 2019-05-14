@@ -7,10 +7,10 @@ public class Instantiate : MonoBehaviour
     //Variável para controlar o spawner
     public bool Ative = true;
 
-    public Rigidbody2D body1;   // Prefab 1
-    public Rigidbody2D body2;   // Prefab 2
-    public Transform spawn1;    // Ponto de Spawn 1
-    public Transform spawn2;    // Ponto de Spawn 2
+    public Rigidbody2D flyBody;   // Prefab 1
+    public Rigidbody2D groundBody;   // Prefab 2
+    public Transform flySpawner;    // Ponto de Spawn 1
+    public Transform groundSpawner;    // Ponto de Spawn 2
          
 
     private IEnumerator Start()
@@ -48,11 +48,11 @@ public class Instantiate : MonoBehaviour
 
             if (c >= 1 && c <= 2) // Se criar um valor entre 1 e 2
             {
-                Instantiate(body1, spawn1.position, spawn1.rotation); // Spawna Prefab 1
+                 Instantiate(flyBody, flySpawner.position, flySpawner.rotation); // Spawna Prefab 1
             }
             else // Se criar um valor maior que 2 e menor que 3
             {
-                Instantiate(body2, spawn2.position, spawn2.rotation); // Spawna Prefab 2
+                Instantiate(groundBody, groundSpawner.position, groundSpawner.rotation); // Spawna Prefab 2
             }
 
         }

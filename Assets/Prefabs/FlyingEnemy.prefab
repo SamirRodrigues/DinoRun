@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4204068900617721425}
   - component: {fileID: 6583826881105815621}
   - component: {fileID: 8932328708228736211}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlyingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -154,3 +154,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vel: 3
   e_Ground: {fileID: 0}
+  Object: {fileID: 0}

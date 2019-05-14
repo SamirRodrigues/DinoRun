@@ -18,7 +18,7 @@ public class DestroyPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("!");
+            //Debug.Log("!");
             player.PlayerDestroy();
         }
     }

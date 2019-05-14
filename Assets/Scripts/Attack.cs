@@ -13,6 +13,9 @@ public class Attack : MonoBehaviour
 
     //Enemy interation
 
+    private float timeBtwAttack;
+    public float startTimeBtwAttack;
+
     public Transform attackPosKick; // Posição do ataque kick
     public Transform attackPosHead; // Posição do ataque head
     public LayerMask whatIsEnemy; // O que é inimigo (Quem eu vou atacar)
@@ -88,9 +91,35 @@ public class Attack : MonoBehaviour
             anim.SetBool("Kick", true);
 
             // Ativa o colisor do Chute
-            GetComponentInChildren<UnlockAttack>().AtiveAttack();
+            if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
+            {
+                if (Input.GetKey(KeyCode.W))
+                {
+                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosKick.position, attackRange, whatIsEnemy); //Cria um trigger para verificar quantos inimigos estão na área de contato
 
-            // Inicia um cooldown para poder desativar o colisor
+                    if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
+                    {
+                        for (int i = 0; i < enemiesToDamage.Length; i++)
+                        {
+                            enemiesToDamage[i].GetComponent<Enemy>().Kill(); // Mata todos os inimigos que estão na área
+
+                        }
+                    }
+                    else // Caso não tenha inimigos na área
+                    {
+                        topadaAnim(); //Chama a animação de topada junto com o boss
+                    }
+                }
+
+                timeBtwAttack = startTimeBtwAttack;
+            }
+            else
+            {
+                timeBtwAttack -= Time.deltaTime;
+            }
+
+
+            // Inicia um cooldown para poder dar o tempo de chamar a animação de corrida
             cooldownAttack.Play(0.5f); // Duração do Attack (Dura 0,5 segundos)
 
         }
@@ -100,8 +129,6 @@ public class Attack : MonoBehaviour
             // Inicia a animação de corrida
             anim.SetBool("Run", true);
             anim.SetBool("Kick", false);
-
-            GetComponentInChildren<UnlockAttack>().DesativeAttack(); // Desativa o colisor do ataque
         }
         
     }
@@ -115,9 +142,34 @@ public class Attack : MonoBehaviour
             anim.SetBool("Head", true);
 
             // Ativa o colisor da Cabeçada
-            GetComponentInChildren<UnlockHeadAttack>().AtiveAttack();
+            if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
+            {
+                if (Input.GetKey(KeyCode.W))
+                {
+                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosKick.position, attackRange, whatIsEnemy); //Cria um trigger para verificar quantos inimigos estão na área de contato
 
-            // Inicia um cooldown para poder desativar o colisor
+                    if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
+                    {
+                        for (int i = 0; i < enemiesToDamage.Length; i++)
+                        {
+                            enemiesToDamage[i].GetComponent<Enemy>().Kill(); // Mata todos os inimigos que estão na área
+
+                        }
+                    }
+                    else // Caso não tenha inimigos na área
+                    {
+                        topadaAnim(); //Chama a animação de topada junto com o boss
+                    }
+                }
+
+                timeBtwAttack = startTimeBtwAttack;
+            }
+            else
+            {
+                timeBtwAttack -= Time.deltaTime;
+            }
+
+            // Inicia um cooldown para poder dar o tempo de chamar a animação de corrida
             cooldownAttack.Play(0.5f); // Duração do Attack (Dura 0,5 segundos)
         }
         
@@ -126,8 +178,6 @@ public class Attack : MonoBehaviour
             // Inicia a animação de corrida
             anim.SetBool("Run", true);
             anim.SetBool("Head", false);
-
-            GetComponentInChildren<UnlockHeadAttack>().DesativeAttack(); // Desativa o colisor do ataque
         }
     }
 

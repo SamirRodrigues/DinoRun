@@ -17,13 +17,6 @@ public class UnlockAttack : MonoBehaviour
         Collider.enabled = false;
     }
 
-    /*
-    public void Update()          // Incrementa minha variável de lvlspeed
-    {
-        speedLVL += 0.01f;
-    }
-    */
-
     public void AtiveAttack()     // Quando chamado
     {
         Collider.enabled = true;  // Ativa o colisor
@@ -31,7 +24,7 @@ public class UnlockAttack : MonoBehaviour
 
     public void DesativeAttack()  // Quando chamado
     {
-        Collider.enabled = false; // Desativa o colisor
+        //Collider.enabled = false; // Desativa o colisor
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -29,16 +29,6 @@ public class Enemy : MonoBehaviour
         Move();
     }
 
-
-    void OnCollisionEnter2D(Collision2D AnotherObj)      // Função responsável pelas interações com Colisores
-    {
-        if (AnotherObj.gameObject.CompareTag("Player"))  // Se colidir com um player
-        { 
-            //Destroy(AnotherObj.gameObject);              // Destroi player
-
-        }
-    }
-
     public void Move() // Irá controlar os movimentos do personagem
     {
         

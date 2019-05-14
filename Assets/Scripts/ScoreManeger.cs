@@ -37,10 +37,10 @@ public class ScoreManeger : MonoBehaviour
             scoreCount += pointsPerSeconds * Time.deltaTime; //Logica para acrescentar pontos
         }
         
-        hiScoreCount = 0; //Reset HighScore
+        //hiScoreCount = 0; //Reset HighScore
         if (scoreCount > hiScoreCount) // Define novo highScore
         {
-            //hiScoreCount = scoreCount;
+            hiScoreCount = scoreCount;
             PlayerPrefs.SetFloat("HighScore", hiScoreCount); //Armaneza highScore no pc
         }
 

@@ -29,7 +29,7 @@ public class UnlockHeadAttack : MonoBehaviour
 
     public void DesativeAttack()                                        // Quando chamado
     {
-        Collider.enabled = false;                                       // Desativa o colisor
+        //Collider.enabled = false;                                       // Desativa o colisor
     }
   
     private void OnTriggerEnter2D(Collider2D collision) 

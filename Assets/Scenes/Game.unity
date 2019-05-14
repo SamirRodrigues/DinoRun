@@ -4376,26 +4376,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8690510365934868146, guid: 3758573dd9ac8bb49bb75f1b89447fd1,
-        type: 3}
-      propertyPath: theScoreManager
-      value: 
-      objectReference: {fileID: 1593658658}
-    - target: {fileID: 8690510365934868146, guid: 3758573dd9ac8bb49bb75f1b89447fd1,
-        type: 3}
-      propertyPath: killPlayer
-      value: 
-      objectReference: {fileID: 907631254}
-    - target: {fileID: 8690510365934868146, guid: 3758573dd9ac8bb49bb75f1b89447fd1,
-        type: 3}
-      propertyPath: boss
-      value: 
-      objectReference: {fileID: 755330633}
-    - target: {fileID: 8690510365934868146, guid: 3758573dd9ac8bb49bb75f1b89447fd1,
-        type: 3}
-      propertyPath: gameOverAtive
-      value: 
-      objectReference: {fileID: 822597136}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 1
@@ -4468,6 +4448,26 @@ PrefabInstance:
       propertyPath: verificationHead
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8690510365934868146, guid: 3758573dd9ac8bb49bb75f1b89447fd1,
+        type: 3}
+      propertyPath: theScoreManager
+      value: 
+      objectReference: {fileID: 1593658658}
+    - target: {fileID: 8690510365934868146, guid: 3758573dd9ac8bb49bb75f1b89447fd1,
+        type: 3}
+      propertyPath: killPlayer
+      value: 
+      objectReference: {fileID: 907631254}
+    - target: {fileID: 8690510365934868146, guid: 3758573dd9ac8bb49bb75f1b89447fd1,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 755330633}
+    - target: {fileID: 8690510365934868146, guid: 3758573dd9ac8bb49bb75f1b89447fd1,
+        type: 3}
+      propertyPath: gameOverAtive
+      value: 
+      objectReference: {fileID: 822597136}
     - target: {fileID: 5378883723720897272, guid: 3758573dd9ac8bb49bb75f1b89447fd1,
         type: 3}
       propertyPath: m_Enabled

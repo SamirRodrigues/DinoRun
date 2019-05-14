@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
         if (morto == true) // Se tiver morto 
         {
             anim.SetTrigger("Death");               // Animação de morto
+            Debug.Log("Morri");
             e_Ground.enabled = false;               // Desativa o collider
 
             // Tempo de duração até o inimigo ser destruído (usa função cooldown)

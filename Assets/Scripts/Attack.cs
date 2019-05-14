@@ -144,9 +144,9 @@ public class Attack : MonoBehaviour
             // Ativa o colisor da Cabeçada
             if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
             {
-                if (Input.GetKey(KeyCode.W))
+                if (Input.GetKey(KeyCode.Q))
                 {
-                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosKick.position, attackRange, whatIsEnemy); //Cria um trigger para verificar quantos inimigos estão na área de contato
+                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosHead.position, attackRange, whatIsEnemy); //Cria um trigger para verificar quantos inimigos estão na área de contato
 
                     if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
                     {

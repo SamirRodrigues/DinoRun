@@ -48,18 +48,19 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     Sound[] sounds = null;
 
-    public bool Loop = false;
-
     void Awake ()
     {
         if(instance != null)
         {
-            Debug.LogError("More than one AudioManager in the scene.");
+            //Debug.LogError("More than one AudioManager in the scene.");
+            Destroy(gameObject);
         }
         else
         {
             instance = this;
         }
+
+        DontDestroyOnLoad(gameObject);
         
     }
 
@@ -75,15 +76,7 @@ public class AudioManager : MonoBehaviour
         
     }
 
-    public void Update()
-    {
-        if (Loop == true)
-        {
-            PlaySound("PlayerWalk");
-        }
-    }
-
-    public void PlaySound( string _name)
+    public void PlaySound(string _name)
     {
         for (int i = 0; i < sounds.Length; i++)
         {

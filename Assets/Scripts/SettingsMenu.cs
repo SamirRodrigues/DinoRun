@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SettingsMenu : MonoBehaviour
 {
 
-    public AudioMixer audioMizer;
+    public AudioMixer audioMixer;
 
 
     /*
@@ -55,7 +55,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        audioMizer.SetFloat("Volume", volume);
+        audioMixer.SetFloat("Volume", volume);
     }
     
     

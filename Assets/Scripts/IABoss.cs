@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class IABoss : MonoBehaviour
 {
-    private int gambiarra = 0; // Faz com que o som toque uma unica vez, de forma a tirar ele do loop infinito gerado pelo update
-
+    public int aux = 0; // Responsável por emitir o rugido do Boss, além de registrar o score que o jogo esta quando entrar em cena.
+                        // De forma a poder definir uma quantidade específica de score em que ele permanecerá na tela
 
     //Gerenciador de animações
     public Animator anim;
 
+    public Transform movePosition;          // Ponto onde o boss tem que se mover ao ser chamado para cena
+    public Transform backStepPosition;      // Ponto onde o boss tem que se mover depois de aparecer em cena e passar um tempo sem ser necessitado
+    public ScoreManeger scoreVerificator;   // Verifica a quantidade de pontos para poder decidir a próxima ação do boss
+    private float atualScore = 0;
 
-    public Rigidbody2D rb;
-    public Transform movePosition; // Ponto onde o boss tem que se mover
-    
 
     //Responsável por gerenciar o som
     public AudioManager bossRoar;
@@ -46,15 +47,26 @@ public class IABoss : MonoBehaviour
         {
             Walk();
 
-            if (gambiarra == 0)
-            {
-                gambiarra += 1;                
-            }
-            else if (gambiarra == 1)
+            if (aux == 0)
             {
                 bossRoar.PlaySound("BossRoar");
-                gambiarra += 1;
+                atualScore = scoreVerificator.scoreCount;
+                aux += 1;                
             }
+            else if (aux == 1)
+            {
+                if (scoreVerificator.scoreCount >= (atualScore + 100))
+                {
+                    missTakesCount = 0;
+                    aux = 0;
+                }
+            }
+        } 
+        else if (missTakesCount == 0)
+        {
+
+            transform.position = Vector3.MoveTowards(transform.position, backStepPosition.position, Time.deltaTime * vel);
+
         }
     }
 
@@ -68,8 +80,5 @@ public class IABoss : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, movePosition.position, Time.deltaTime * vel);                  
     }
-
-   
-
 
 }

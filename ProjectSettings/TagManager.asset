@@ -41,9 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Back
+    uniqueID: 2281327285
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Game
+  - name: Front
     uniqueID: 1550301199
     locked: 0

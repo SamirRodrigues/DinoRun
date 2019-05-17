@@ -54,7 +54,7 @@ public class Attack : MonoBehaviour
         {
             Kick();
             HeadAttack();
-            theScoreManager.scoreIncreasing = true;
+            theScoreManager.scoreRun = true;
 
             if (!audioSrc.isPlaying) // Se o áudio não estiver tocando ainda
             {
@@ -64,7 +64,7 @@ public class Attack : MonoBehaviour
         }
         else
         {
-            theScoreManager.scoreIncreasing = false; // Para de incrementar a pontuação            
+            theScoreManager.scoreRun = false; // Para de incrementar a pontuação            
 
             audioSrc.Stop(); // Para de tocar o som de Walk
         }

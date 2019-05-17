@@ -9,15 +9,22 @@ public class ScoreManeger : MonoBehaviour
     public Text scoreText; 
     public Text hiScoreText;
 
-    //Variáveis que vão armazenar as pontuações
+    // Variáveis que vão armazenar as pontuações
 
-    public float scoreCount; //Score atual que varia conforme a partida anda   
-    public float hiScoreCount; //High Score
+    public float scoreCount;    // Score atual que varia conforme a partida anda   
+    public float hiScoreCount;  // High Score
 
 
-    public float pointsPerSeconds; // Variável que vai controlar quantos pontos o player ganha por segundo
+    public float pointsPerSeconds;  // Variável que vai controlar quantos pontos o player ganha por segundo
+    public bool scoreRun;           //Controla se o Score vai continuar aumentando (basicamente verifica se o player ta vivo)
 
-    public bool scoreIncreasing; //Controla se vai haver acrescimo de pontos ou não (basicamente verifica se o player ta vivo)
+    //DifficultyProgression
+    private int aux;
+    public BackGround velBackGround;
+    public Enemy velEnemyG;
+    public Enemy velEnemyS;
+
+    private float atualScore;
 
 
     void Start()
@@ -27,26 +34,55 @@ public class ScoreManeger : MonoBehaviour
         {
             hiScoreCount = PlayerPrefs.GetFloat("HighScore"); // Se tiver, a variável recebe esse valor
         }
+        ResetDifficulty();
     }
 
     
     void Update()
     {
-        if (scoreIncreasing == true) //Permite que continue somando pontos
+        if (scoreRun == true) // Permite que continue somando pontos
         { 
-            scoreCount += pointsPerSeconds * Time.deltaTime; //Logica para acrescentar pontos
+            scoreCount += pointsPerSeconds * Time.deltaTime; // Logica para acrescentar pontos
         }
         
         //hiScoreCount = 0; //Reset HighScore
         if (scoreCount > hiScoreCount) // Define novo highScore
         {
             hiScoreCount = scoreCount;
-            PlayerPrefs.SetFloat("HighScore", hiScoreCount); //Armaneza highScore no pc
+            PlayerPrefs.SetFloat("HighScore", hiScoreCount); // Armaneza highScore no pc
         }
 
-        scoreText.text = "Score: " + Mathf.Round (scoreCount);   //Atualiza as informações de Score na tela
-        hiScoreText.text = "High Score: " + Mathf.Round (hiScoreCount); //Atualiza as informações de HighScore na tela
+        scoreText.text = "Score: " + Mathf.Round (scoreCount);          // Atualiza as informações de Score na tela
+        hiScoreText.text = "High Score: " + Mathf.Round (hiScoreCount); // Atualiza as informações de HighScore na tela
 
 
+        DifficultyProgression();
+    }
+
+    void DifficultyProgression()
+    {
+        if (aux == 0)
+        {
+            atualScore = scoreCount;
+            aux = 1;
+        }
+        else if(aux == 1)
+        {
+            if (scoreCount >= atualScore + 150) // Incrementa a dificuldade a cada 150 pontos
+            {
+                velBackGround.vel += 0.5f;                
+                velEnemyG.vel += 0.5f;
+                velEnemyS.vel += 0.5f;
+                aux = 0;
+            }
+            
+        }
+    }
+
+    public void ResetDifficulty()
+    {
+        velBackGround.vel = 1f;
+        velEnemyG.vel = 3f;
+        velEnemyS.vel = 3f;
     }
 }

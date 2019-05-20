@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // public Rigidbody2D GroundEnemy;
+    
     public float vel = 3f;    
 
     private bool morto = false;

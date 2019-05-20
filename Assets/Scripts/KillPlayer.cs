@@ -17,12 +17,20 @@ public class KillPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")) // Caso um objeto com tag Enemy entre no meu trigger
+        if (collision.gameObject.CompareTag("EnemySky")) // Caso um objeto com tag Enemy Sky entre no meu trigger
         {
-            collision.GetComponent<Enemy>().Kill();
-
+            StartCoroutine(Wait(collision));
+            killPlayer.KilledBySky();
             boss.missTakesCount += 1;
             StartCoroutine(Cooldown());            
+
+        }
+        else if (collision.gameObject.CompareTag("EnemyGround")) // Caso um objeto com tag Enemy Ground entre no meu trigger
+        {
+            Destroy(collision.gameObject);
+            killPlayer.KilledByGround();
+            boss.missTakesCount += 1;
+            StartCoroutine(Cooldown());
 
         }
     }
@@ -51,5 +59,11 @@ public class KillPlayer : MonoBehaviour
        
         killPlayer.TakeDamage(vivo);
         StartCoroutine(Instance());
+    }
+
+    public IEnumerator Wait(Collider2D collision)
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(collision.gameObject);
     }
 }

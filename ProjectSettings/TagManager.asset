@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - FailAttack
   - Boss
+  - EnemyGround
+  - EnemySky
   layers:
   - Default
   - TransparentFX

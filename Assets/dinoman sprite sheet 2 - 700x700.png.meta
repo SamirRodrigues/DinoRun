@@ -1,0 +1,725 @@
+fileFormatVersion: 2
+guid: a376b059cc8131d43bac6d437ca5ca0e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8736034175317036235
+    second: dinoman sprite sheet 2 - 700x700_0
+  - first:
+      213: 6802922347458014631
+    second: dinoman sprite sheet 2 - 700x700_1
+  - first:
+      213: 2141741408334892400
+    second: dinoman sprite sheet 2 - 700x700_2
+  - first:
+      213: 2383215377621679761
+    second: dinoman sprite sheet 2 - 700x700_3
+  - first:
+      213: -8802115903587936343
+    second: dinoman sprite sheet 2 - 700x700_4
+  - first:
+      213: 777228170338296863
+    second: dinoman sprite sheet 2 - 700x700_5
+  - first:
+      213: 6751560359304784051
+    second: dinoman sprite sheet 2 - 700x700_6
+  - first:
+      213: -8522925417078350559
+    second: dinoman sprite sheet 2 - 700x700_7
+  - first:
+      213: 6420225386651533952
+    second: dinoman sprite sheet 2 - 700x700_8
+  - first:
+      213: -620479563818953957
+    second: dinoman sprite sheet 2 - 700x700_9
+  - first:
+      213: -1483378806648498749
+    second: dinoman sprite sheet 2 - 700x700_10
+  - first:
+      213: -7613498322063210911
+    second: dinoman sprite sheet 2 - 700x700_11
+  - first:
+      213: -3572161862705823933
+    second: dinoman sprite sheet 2 - 700x700_12
+  - first:
+      213: -7938623558748569843
+    second: dinoman sprite sheet 2 - 700x700_13
+  - first:
+      213: 6794410998961938252
+    second: dinoman sprite sheet 2 - 700x700_14
+  - first:
+      213: 596825604228196042
+    second: dinoman sprite sheet 2 - 700x700_15
+  - first:
+      213: 3197785697785090030
+    second: dinoman sprite sheet 2 - 700x700_16
+  - first:
+      213: -5443163706633703022
+    second: dinoman sprite sheet 2 - 700x700_17
+  - first:
+      213: 4151245794009836981
+    second: dinoman sprite sheet 2 - 700x700_18
+  - first:
+      213: 7924255912467628883
+    second: dinoman sprite sheet 2 - 700x700_19
+  - first:
+      213: -9221914192140630588
+    second: dinoman sprite sheet 2 - 700x700_20
+  - first:
+      213: -7510594058811089133
+    second: dinoman sprite sheet 2 - 700x700_21
+  - first:
+      213: 1334114115666406865
+    second: dinoman sprite sheet 2 - 700x700_22
+  - first:
+      213: -4102935824579333018
+    second: dinoman sprite sheet 2 - 700x700_23
+  - first:
+      213: -4504114774869253721
+    second: dinoman sprite sheet 2 - 700x700_24
+  - first:
+      213: -5759389738675507338
+    second: dinoman sprite sheet 2 - 700x700_25
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4200
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b7d9e331fc3dcd4e9e3161c101c98e4
+      internalID: 8736034175317036235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_1
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 4200
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e87ef9b7cf93ee408ef602bde8f88e1
+      internalID: 6802922347458014631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_2
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 4200
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f48450b5b40444fb74c970cdf9690c
+      internalID: 2141741408334892400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_3
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 4200
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 625ca268af89b354594179292606569f
+      internalID: 2383215377621679761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3500
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e8fdc3d4e91ae47b71313d1100603d
+      internalID: -8802115903587936343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_5
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 3500
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ee0bbe371c27240942f0e47be23a59
+      internalID: 777228170338296863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_6
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 3500
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84cf05a070710d4c9ae7eacbd6d471f
+      internalID: 6751560359304784051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_7
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3500
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e48deea8391fa45908b7174b80fb50
+      internalID: -8522925417078350559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2800
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873d46bc74110b34da6daa1d1a524a57
+      internalID: 6420225386651533952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_9
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 2800
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70ed5aa4bd610e42bf4f20b96674d44
+      internalID: -620479563818953957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_10
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2800
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f38066d3aab50419f3d88d1785c84e
+      internalID: -1483378806648498749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_11
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2800
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09a80b69dd59a8469de7fc7ea37c607
+      internalID: -7613498322063210911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2100
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257dcce11f65ce74aa27d6188abd26c7
+      internalID: -3572161862705823933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_13
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 2100
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43ec737530b6254ea037dfe369104a8
+      internalID: -7938623558748569843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_14
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2100
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09757b7bb1f58b540b9dd96dfaf3de55
+      internalID: 6794410998961938252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_15
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2100
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8f7e6e7220df5409b8557af87897c7
+      internalID: 596825604228196042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff096512fa47e44fb5df7984ac97eaf
+      internalID: 3197785697785090030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_17
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1400
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4b381bb40f4f840b080520ab2e40d2
+      internalID: -5443163706633703022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_18
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1400
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961c8d2955a9df94aaf681e12869dab3
+      internalID: 4151245794009836981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_19
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1400
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91233952bdee6ee4cb20b256bf16f44d
+      internalID: 7924255912467628883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7d45c532515bc47975bed0d506428d
+      internalID: -9221914192140630588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_21
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 700
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f69fb5eca36dd4f8efb09661795483
+      internalID: -7510594058811089133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_22
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 700
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a6a7d322391ec4cb0281b5059a1b2c
+      internalID: 1334114115666406865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_23
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 700
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae235618145bd845be0c1ba74d27581
+      internalID: -4102935824579333018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6960bd94bceeb6c429efaee5b3a1c04a
+      internalID: -4504114774869253721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoman sprite sheet 2 - 700x700_25
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01dafa27041f49346a56c2af50aa5e61
+      internalID: -5759389738675507338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 481439f677e64554a8c750a30ba27a24
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

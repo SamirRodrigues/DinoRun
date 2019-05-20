@@ -10,7 +10,7 @@ public class Attack : MonoBehaviour
 
     public IABoss boss; // Interações com o boss
     public GameObject Player;
-
+    private bool scared = false;
     //Enemy interation
 
     private float timeBtwAttack;
@@ -87,8 +87,7 @@ public class Attack : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.W)) //Caso precione a tecla W
         {
             // Inicia a animação de Kick
-            anim.SetBool("Run", false);
-            anim.SetBool("Kick", true);
+            anim.SetTrigger("Kick 0");
 
             // Ativa o colisor do Chute
             if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
@@ -126,9 +125,14 @@ public class Attack : MonoBehaviour
 
         if (cooldownAttack.IsFinish() == true) // Verifica se o tempo do cooldown acabou
         {
-            // Inicia a animação de corrida
-            anim.SetBool("Run", true);
             anim.SetBool("Kick", false);
+            if (scared == false)
+            {
+                // Inicia a animação de corrida
+                anim.SetBool("Run", true);
+                anim.SetBool("Kick", false);
+            }
+           
         }
         
     }
@@ -138,8 +142,7 @@ public class Attack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))//Caso precione a tecla Q
         {
             // Inicia a animação de HeadButt (cabeçada)
-            anim.SetBool("Run", false);
-            anim.SetBool("Head", true);
+            anim.SetTrigger("Head 0");
 
             // Ativa o colisor da Cabeçada
             if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
@@ -175,9 +178,13 @@ public class Attack : MonoBehaviour
         
         if (cooldownAttack.IsFinish() == true) // Verifica se o tempo do cooldown acabou
         {
-            // Inicia a animação de corrida
-            anim.SetBool("Run", true);
             anim.SetBool("Head", false);
+            if (scared == false)
+            {
+                // Inicia a animação de corrida
+                anim.SetBool("Run", true);
+                anim.SetBool("Head", false);
+            }
         }
     }
 
@@ -194,6 +201,30 @@ public class Attack : MonoBehaviour
     {
         anim.SetTrigger("Topada");         // Inicia a animação da Topada
         boss.missTakesCount += 1;          // Chama o boss      
+    }
+
+    public void ScaredAnim()
+    {
+        scared = true;
+        anim.SetBool("Scared", true);
+        anim.SetBool("Run", false);
+    }
+
+    public void NormalRun()
+    {
+        scared = false;
+        anim.SetBool("Scared", false);
+        anim.SetBool("Run", true);
+    }
+
+    public void KilledBySky()
+    {
+        anim.SetTrigger("DeathBySky");
+    }
+
+    public void KilledByGround()
+    {
+        anim.SetTrigger("DeathByGround");
     }
 }
 

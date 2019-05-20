@@ -25,6 +25,7 @@ public class ScoreManeger : MonoBehaviour
     public Enemy velEnemyS;
 
     private float atualScore;
+    public float maxDifficultyProgression = 1000; // Valor que vai definir onde o jogo se mantem no nível mais dificil
 
 
     void Start()
@@ -63,14 +64,18 @@ public class ScoreManeger : MonoBehaviour
     {
         if (aux == 0)
         {
-            atualScore = scoreCount;
-            aux = 1;
+            if (scoreCount <= maxDifficultyProgression)
+            {
+                atualScore = scoreCount;
+                aux = 1;
+            }
+            
         }
         else if(aux == 1)
         {
-            if (scoreCount >= atualScore + 150) // Incrementa a dificuldade a cada 150 pontos
+            if (scoreCount >= atualScore + 100) // Incrementa a dificuldade a cada 150 pontos
             {
-                velBackGround.vel += 0.5f;                
+                velBackGround.vel += 0.3f;                
                 velEnemyG.vel += 0.5f;
                 velEnemyS.vel += 0.5f;
                 aux = 0;

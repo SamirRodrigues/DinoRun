@@ -49,23 +49,14 @@ public class IABoss : MonoBehaviour
 
             if (aux == 0)
             {
-                if(transform.position == movePosition.position)
-                {
-                    anim.SetBool("Move", true);
-                    anim.SetBool("Stop", false);
-                }
-                
                 bossRoar.PlaySound("BossRoar");
                 atualScore = scoreVerificator.scoreCount;
                 aux += 1;                
             }
             else if (aux == 1)
             {
-               // anim.SetBool("Move", false);
-               // anim.SetBool("Stop", true);
                 if (scoreVerificator.scoreCount >= (atualScore + 100))
                 {
-                    Debug.Log("BackStep");
                     missTakesCount = 0;
                     aux = 0;
                 }
@@ -79,9 +70,14 @@ public class IABoss : MonoBehaviour
         }
     }
 
+    public void CallBoss()
+    {
+        missTakesCount += 1;
+
+    }
+    
     private void Walk()
     {
-        Debug.Log("!");
         transform.position = Vector3.MoveTowards(transform.position, movePosition.position, Time.deltaTime * vel);                  
     }
 

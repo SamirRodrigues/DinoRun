@@ -6,11 +6,18 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    //Jump
+    public int qtdPulo = 1;
+    public float jump_force;
+    public Rigidbody2D rbPlayer;
+
     //Boss interation
 
     public IABoss boss; // Interações com o boss
     public GameObject Player;
     private bool scared = false;
+    public bool callBoss = true;
+
     //Enemy interation
 
     private float timeBtwAttack;
@@ -24,7 +31,7 @@ public class Attack : MonoBehaviour
 
     // Sistema de pontuação
 
-    public ScoreManeger theScoreManager; 
+    public ScoreManeger theScoreManager;
 
     //Animação
 
@@ -38,29 +45,31 @@ public class Attack : MonoBehaviour
 
     public CooldownManeger cooldownAttack = new CooldownManeger();
 
-    
+
     void Start()
-    {       
+    {
         anim = GetComponent<Animator>();
         audioSrc = GetComponent<AudioSource>();
+        cooldownAttack.Play(1.5f); // Duração do Attack (Dura 1,5 segundos)
 
     }
 
 
     void Update()
     {
-            
+
         if (vivo == true)
         {
             Kick();
             HeadAttack();
+            Jump();
             theScoreManager.scoreRun = true;
 
             if (!audioSrc.isPlaying) // Se o áudio não estiver tocando ainda
             {
                 audioSrc.Play(); // Toca o som de Walk
             }
-            
+
         }
         else
         {
@@ -84,47 +93,48 @@ public class Attack : MonoBehaviour
 
     void Kick()
     {
-        if (Input.GetKeyDown (KeyCode.W)) //Caso precione a tecla W
-        {
-            // Inicia a animação de Kick
-            anim.SetTrigger("Kick 0");
-
-            // Ativa o colisor do Chute
-            if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
-            {
-                if (Input.GetKey(KeyCode.W))
-                {
-                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosKick.position, attackRange, whatIsEnemy); //Cria um trigger para verificar quantos inimigos estão na área de contato
-
-                    if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
-                    {
-                        for (int i = 0; i < enemiesToDamage.Length; i++)
-                        {
-                            enemiesToDamage[i].GetComponent<Enemy>().Kill(); // Mata todos os inimigos que estão na área
-
-                        }
-                    }
-                    else // Caso não tenha inimigos na área
-                    {
-                        topadaAnim(); //Chama a animação de topada junto com o boss
-                    }
-                }
-
-                timeBtwAttack = startTimeBtwAttack;
-            }
-            else
-            {
-                timeBtwAttack -= Time.deltaTime;
-            }
-
-
-            // Inicia um cooldown para poder dar o tempo de chamar a animação de corrida
-            cooldownAttack.Play(0.5f); // Duração do Attack (Dura 0,5 segundos)
-
-        }
-
         if (cooldownAttack.IsFinish() == true) // Verifica se o tempo do cooldown acabou
         {
+
+            if (Input.GetKeyDown(KeyCode.W)) //Caso precione a tecla W
+            {
+                // Inicia a animação de Kick
+                anim.SetTrigger("Kick 0");
+
+                // Ativa o colisor do Chute
+                if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
+                {
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosKick.position, attackRange, whatIsEnemy); //Cria um trigger para verificar quantos inimigos estão na área de contato
+
+                        if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
+                        {
+                            for (int i = 0; i < enemiesToDamage.Length; i++)
+                            {
+                                enemiesToDamage[i].GetComponent<Enemy>().Kill(); // Mata todos os inimigos que estão na área
+
+                            }
+                        }
+                        else // Caso não tenha inimigos na área
+                        {
+                            //TopadaAnim(); //Chama a animação de topada junto com o boss
+                        }
+                    }
+
+                    timeBtwAttack = startTimeBtwAttack;
+                }
+                else
+                {
+                    timeBtwAttack -= Time.deltaTime;
+                }
+
+
+                // Inicia um cooldown para poder dar o tempo de chamar a animação de corrida
+
+                cooldownAttack.Play(1.5f); // Duração do Attack (Dura 0,5 segundos)
+            }
+
             anim.SetBool("Kick", false);
             if (scared == false)
             {
@@ -132,52 +142,48 @@ public class Attack : MonoBehaviour
                 anim.SetBool("Run", true);
                 anim.SetBool("Kick", false);
             }
-           
+
         }
-        
+
     }
 
     void HeadAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Q))//Caso precione a tecla Q
-        {
-            // Inicia a animação de HeadButt (cabeçada)
-            anim.SetTrigger("Head 0");
-
-            // Ativa o colisor da Cabeçada
-            if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
-            {
-                if (Input.GetKey(KeyCode.Q))
-                {
-                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosHead.position, attackRange, whatIsEnemy); //Cria um trigger para verificar quantos inimigos estão na área de contato
-
-                    if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
-                    {
-                        for (int i = 0; i < enemiesToDamage.Length; i++)
-                        {
-                            enemiesToDamage[i].GetComponent<Enemy>().Kill(); // Mata todos os inimigos que estão na área
-
-                        }
-                    }
-                    else // Caso não tenha inimigos na área
-                    {
-                        topadaAnim(); //Chama a animação de topada junto com o boss
-                    }
-                }
-
-                timeBtwAttack = startTimeBtwAttack;
-            }
-            else
-            {
-                timeBtwAttack -= Time.deltaTime;
-            }
-
-            // Inicia um cooldown para poder dar o tempo de chamar a animação de corrida
-            cooldownAttack.Play(0.5f); // Duração do Attack (Dura 0,5 segundos)
-        }
-        
         if (cooldownAttack.IsFinish() == true) // Verifica se o tempo do cooldown acabou
         {
+
+            if (Input.GetKeyDown(KeyCode.Q))    // Caso precione a tecla Q
+            {
+                // Inicia a animação de HeadButt (cabeçada)
+                anim.SetTrigger("Head 0");
+
+                // Ativa o colisor da Cabeçada
+                if (timeBtwAttack <= 0) // Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
+                {
+                    if (Input.GetKey(KeyCode.Q))
+                    {
+                        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosHead.position, attackRange, whatIsEnemy); // Cria um trigger para verificar quantos inimigos estão na área de contato
+
+                        if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
+                        {
+                            for (int i = 0; i < enemiesToDamage.Length; i++)
+                            {
+                                enemiesToDamage[i].GetComponent<Enemy>().Kill(); // Mata todos os inimigos que estão na área
+
+                            }
+                        }
+                    }
+
+                    timeBtwAttack = startTimeBtwAttack;
+                }
+                else
+                {
+                    timeBtwAttack -= Time.deltaTime;
+                }
+
+                // Inicia um cooldown para poder dar o tempo de chamar a animação de corrida
+                cooldownAttack.Play(1.5f); // Duração do Attack (Dura 0,5 segundos)
+            }
             anim.SetBool("Head", false);
             if (scared == false)
             {
@@ -188,6 +194,18 @@ public class Attack : MonoBehaviour
         }
     }
 
+    void Jump()
+    {
+        if (qtdPulo > 0)
+        {
+            if (Input.GetKeyDown(KeyCode.E))    // Caso precione a tecla E
+            {
+                anim.SetTrigger("Jump");
+                rbPlayer.AddForce(new Vector2(0, jump_force));
+                qtdPulo -= 1;
+            }
+        }
+    }
 
     void OnDrawGizmosSelected() // Cria um Gizmo na tela apra que seja possivel ver o a área do colisor mesmo quando ele estiver desativado
     {
@@ -195,12 +213,17 @@ public class Attack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPosKick.position, attackRange);
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(attackPosHead.position, attackRange);
-    }   
+    }
 
-    public void topadaAnim()
+    public void TopadaAnim()
     {
         anim.SetTrigger("Topada");         // Inicia a animação da Topada
-        boss.missTakesCount += 1;          // Chama o boss      
+
+        if (callBoss == true)
+        {
+            boss.missTakesCount += 1;          // Chama o boss      
+        }
+
     }
 
     public void ScaredAnim()
@@ -226,6 +249,15 @@ public class Attack : MonoBehaviour
     {
         anim.SetTrigger("DeathByGround");
     }
+
+    void OnCollisionEnter2D(Collision2D AnotherObj) // Função responsável pelas interações com Colisores
+    {
+        if (AnotherObj.gameObject.CompareTag("Ground")) // Colisão com o Chão
+        {
+            qtdPulo = 1;
+        }
+    }
+
 }
 
 

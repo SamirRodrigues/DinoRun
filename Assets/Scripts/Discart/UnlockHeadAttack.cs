@@ -42,7 +42,7 @@ public class UnlockHeadAttack : MonoBehaviour
 
         if (collision.gameObject.CompareTag("FailAttack"))
         {
-            GetComponentInParent<Attack>().topadaAnim();
+            GetComponentInParent<Attack>().TopadaAnim();
         }
 
     }

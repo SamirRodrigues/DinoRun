@@ -27,7 +27,7 @@ public class KillPlayer : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("EnemyGround")) // Caso um objeto com tag Enemy Ground entre no meu trigger
         {
-            Destroy(collision.gameObject);
+            StartCoroutine(Wait(collision));
             killPlayer.KilledByGround();
             boss.missTakesCount += 1;
             StartCoroutine(Cooldown());
@@ -42,10 +42,11 @@ public class KillPlayer : MonoBehaviour
 
     public IEnumerator Instance()
     {
-       
+
         yield return new WaitForSeconds(1.5f);  // Espera um tempo em segundos para poder executar a próxima linha
  
         gameOverAtive.gameIsOver = true; // Chama tela de Game Over
+        
         yield return new WaitForSeconds(1f);
         theScoreManager.scoreCount = 0; // Reseta o Score para a próxima partida
      

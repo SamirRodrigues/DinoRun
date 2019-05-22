@@ -37,7 +37,7 @@ public class UnlockAttack : MonoBehaviour
 
         if (collision.gameObject.CompareTag("FailAttack"))  // Caso o ataque não acerte nada
         {
-            GetComponentInParent<Attack>().topadaAnim();    // Ele irá chamar a animação de topada
+            GetComponentInParent<Attack>().TopadaAnim();    // Ele irá chamar a animação de topada
         }
     }
    

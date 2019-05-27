@@ -34,11 +34,6 @@ public class UnlockAttack : MonoBehaviour
             // collision.GetComponent<Enemy>().AumentaVel(speedLVL);   // Aumenta a velocidade geral dos meus inimigos para a velocidade de speedLVL
             collision.GetComponent<Enemy>().Kill();                    // Chama a função Kill do cod Enemy (mata meu enemy)      
         }
-
-        if (collision.gameObject.CompareTag("FailAttack"))  // Caso o ataque não acerte nada
-        {
-            GetComponentInParent<Attack>().TopadaAnim();    // Ele irá chamar a animação de topada
-        }
     }
    
 }

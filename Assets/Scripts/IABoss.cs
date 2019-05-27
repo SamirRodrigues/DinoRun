@@ -23,6 +23,7 @@ public class IABoss : MonoBehaviour
     public KillPlayer kill;
     public DestroyPlayer point;
     public Attack player;
+    public PlayerAnim playerAnim;
 
 
 
@@ -50,7 +51,6 @@ public class IABoss : MonoBehaviour
             if (aux == 0)
             {
                 bossRoar.PlaySound("BossRoar");
-                player.ScaredAnim();
                 atualScore = scoreVerificator.scoreCount;
                 aux += 1;                
             }
@@ -58,6 +58,8 @@ public class IABoss : MonoBehaviour
             {
                 if (scoreVerificator.scoreCount >= (atualScore + 100))
                 {
+                    playerAnim.anim.SetBool("Scared", false);
+                    playerAnim.anim.SetBool("Run", true);
                     missTakesCount = 0;
                     aux = 0;
                 }
@@ -65,7 +67,7 @@ public class IABoss : MonoBehaviour
         } 
         else if (missTakesCount == 0)
         {
-            player.NormalRun();
+            playerAnim.NormalRun();
             transform.position = Vector3.MoveTowards(transform.position, backStepPosition.position, Time.deltaTime * vel);
 
         }

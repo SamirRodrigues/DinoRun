@@ -11,12 +11,6 @@ public class Attack : MonoBehaviour
     public float jump_force;
     public Rigidbody2D rbPlayer;
 
-    //Boss interation
-
-    public IABoss boss; // Interações com o boss
-    public GameObject Player;
-    private bool scared = false;
-    public bool callBoss = true;
 
     //Enemy interation
 
@@ -33,10 +27,6 @@ public class Attack : MonoBehaviour
 
     public ScoreManeger theScoreManager;
 
-    //Animação
-
-    public Animator anim;
-
     //Audio Manager
 
     public AudioSource audioSrc;
@@ -48,7 +38,7 @@ public class Attack : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+       
         audioSrc = GetComponent<AudioSource>();
         cooldownAttack.Play(1.5f); // Duração do Attack (Dura 1,5 segundos)
 
@@ -98,9 +88,6 @@ public class Attack : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.W)) //Caso precione a tecla W
             {
-                // Inicia a animação de Kick
-                anim.SetTrigger("Kick 0");
-
                 // Ativa o colisor do Chute
                 if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
                 {
@@ -135,14 +122,6 @@ public class Attack : MonoBehaviour
                 cooldownAttack.Play(1.5f); // Duração do Attack (Dura 0,5 segundos)
             }
 
-            anim.SetBool("Kick", false);
-            if (scared == false)
-            {
-                // Inicia a animação de corrida
-                anim.SetBool("Run", true);
-                anim.SetBool("Kick", false);
-            }
-
         }
 
     }
@@ -154,9 +133,6 @@ public class Attack : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Q))    // Caso precione a tecla Q
             {
-                // Inicia a animação de HeadButt (cabeçada)
-                anim.SetTrigger("Head 0");
-
                 // Ativa o colisor da Cabeçada
                 if (timeBtwAttack <= 0) // Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
                 {
@@ -184,13 +160,6 @@ public class Attack : MonoBehaviour
                 // Inicia um cooldown para poder dar o tempo de chamar a animação de corrida
                 cooldownAttack.Play(1.5f); // Duração do Attack (Dura 0,5 segundos)
             }
-            anim.SetBool("Head", false);
-            if (scared == false)
-            {
-                // Inicia a animação de corrida
-                anim.SetBool("Run", true);
-                anim.SetBool("Head", false);
-            }
         }
     }
 
@@ -200,7 +169,6 @@ public class Attack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))    // Caso precione a tecla E
             {
-                anim.SetTrigger("Jump");
                 rbPlayer.AddForce(new Vector2(0, jump_force));
                 qtdPulo -= 1;
             }
@@ -215,40 +183,9 @@ public class Attack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPosHead.position, attackRange);
     }
 
-    public void TopadaAnim()
-    {
-        anim.SetTrigger("Topada");         // Inicia a animação da Topada
+ 
 
-        if (callBoss == true)
-        {
-            boss.missTakesCount += 1;          // Chama o boss      
-        }
-
-    }
-
-    public void ScaredAnim()
-    {
-        scared = true;
-        anim.SetBool("Scared", true);
-        anim.SetBool("Run", false);
-    }
-
-    public void NormalRun()
-    {
-        scared = false;
-        anim.SetBool("Scared", false);
-        anim.SetBool("Run", true);
-    }
-
-    public void KilledBySky()
-    {
-        anim.SetTrigger("DeathBySky");
-    }
-
-    public void KilledByGround()
-    {
-        anim.SetTrigger("DeathByGround");
-    }
+    
 
     void OnCollisionEnter2D(Collision2D AnotherObj) // Função responsável pelas interações com Colisores
     {
@@ -257,9 +194,4 @@ public class Attack : MonoBehaviour
             qtdPulo = 1;
         }
     }
-
 }
-
-
-
-

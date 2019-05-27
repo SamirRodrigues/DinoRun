@@ -9,6 +9,8 @@ TagManager:
   - EnemyGround
   - EnemySky
   - Ground
+  - EnemyWood
+  - WoodDestroyer
   layers:
   - Default
   - TransparentFX

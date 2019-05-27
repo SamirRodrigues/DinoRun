@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Topada
+  m_Name: HeadAttack
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1790657253412822731, guid: e7396c29271b71747840464099731eb7,
+      value: {fileID: 7924255912467628883, guid: a376b059cc8131d43bac6d437ca5ca0e,
         type: 3}
     - time: 0.083333336
-      value: {fileID: 1493067786593644737, guid: e7396c29271b71747840464099731eb7,
+      value: {fileID: -9221914192140630588, guid: a376b059cc8131d43bac6d437ca5ca0e,
         type: 3}
     - time: 0.16666667
-      value: {fileID: -7931674815771804263, guid: e7396c29271b71747840464099731eb7,
+      value: {fileID: -7510594058811089133, guid: a376b059cc8131d43bac6d437ca5ca0e,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -47,9 +47,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1790657253412822731, guid: e7396c29271b71747840464099731eb7, type: 3}
-    - {fileID: 1493067786593644737, guid: e7396c29271b71747840464099731eb7, type: 3}
-    - {fileID: -7931674815771804263, guid: e7396c29271b71747840464099731eb7, type: 3}
+    - {fileID: 7924255912467628883, guid: a376b059cc8131d43bac6d437ca5ca0e, type: 3}
+    - {fileID: -9221914192140630588, guid: a376b059cc8131d43bac6d437ca5ca0e, type: 3}
+    - {fileID: -7510594058811089133, guid: a376b059cc8131d43bac6d437ca5ca0e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -23,6 +23,7 @@ public class ScoreManeger : MonoBehaviour
     public BackGround velBackGround;
     public Enemy velEnemyG;
     public Enemy velEnemyS;
+    public Wood velEnemyW;
 
     private float atualScore;
     public float maxDifficultyProgression = 901; // Valor que vai definir onde o jogo se mantem no nível mais dificil
@@ -75,7 +76,8 @@ public class ScoreManeger : MonoBehaviour
         {
             if (scoreCount >= atualScore + 150) // Incrementa a dificuldade a cada 150 pontos
             {
-                velBackGround.vel += 0.2f;                
+                velBackGround.vel += 0.2f;
+                velEnemyW.vel += 0.2f;
                 velEnemyG.vel += 1.5f;
                 velEnemyS.vel += 1.5f;
                 pointsPerSeconds += 2;
@@ -90,5 +92,6 @@ public class ScoreManeger : MonoBehaviour
         velBackGround.vel = 1f;
         velEnemyG.vel = 3f;
         velEnemyS.vel = 3f;
+        velEnemyW.vel = 8f;
     }
 }

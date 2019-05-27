@@ -8,7 +8,8 @@ public class KillPlayer : MonoBehaviour
 
     public IABoss boss; //Interação com o boss
 
-    public Attack killPlayer; //Interação com o player
+    public PlayerAnim killPlayer; //Interação com o PlayerAnim
+    public Attack player; // Interação com o Player
 
     public ScoreManeger theScoreManager; // Interação com o Score
 
@@ -58,7 +59,7 @@ public class KillPlayer : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         boss.missTakesCount += 1;
        
-        killPlayer.TakeDamage(vivo);
+        player.TakeDamage(vivo);
         StartCoroutine(Instance());
     }
 

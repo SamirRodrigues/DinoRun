@@ -36,15 +36,8 @@ public class UnlockHeadAttack : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))                   // Caso um objeto com tag Enemy entre no meu trigger
         {
-            //collision.GetComponent<Enemy>().AumentaVel(speedLVL);       // Aumenta a velocidade geral dos meus inimigos para a velocidade de speedLVL
             collision.GetComponent<Enemy>().Kill();                     // Chama a função Kill do cod Enemy (mata meu enemy)
         }
-
-        if (collision.gameObject.CompareTag("FailAttack"))
-        {
-            GetComponentInParent<Attack>().TopadaAnim();
-        }
-
     }
        
 }

@@ -9,9 +9,11 @@ public class Instantiate : MonoBehaviour
 
     public Rigidbody2D flyBody;   // Prefab 1
     public Rigidbody2D groundBody;   // Prefab 2
+    public Rigidbody2D woodBody;   // Prefab 3
     public Transform flySpawner;    // Ponto de Spawn 1
     public Transform groundSpawner;    // Ponto de Spawn 2
-         
+    public Transform woodSpawner;    // Ponto de Spawn 3
+
 
     private IEnumerator Start()
     {
@@ -44,15 +46,19 @@ public class Instantiate : MonoBehaviour
     {
        
         if (Ative == true) {
-            float c = Random.Range(1f, 3f); // Gera um número aleatório de 1 e 3
+            float c = Random.Range(1f, 4f); // Gera um número aleatório de 1 e 6
 
             if (c >= 1 && c <= 2) // Se criar um valor entre 1 e 2
             {
                  Instantiate(flyBody, flySpawner.position, flySpawner.rotation); // Spawna Prefab 1
             }
-            else // Se criar um valor maior que 2 e menor que 3
+            else if (c >= 3 && c <= 4) // Se criar um valor maior que 2 e menor que 3
             {
                 Instantiate(groundBody, groundSpawner.position, groundSpawner.rotation); // Spawna Prefab 2
+            }
+            else
+            {
+                Instantiate(woodBody, woodSpawner.position, woodSpawner.rotation); //Spawna Prefab 3
             }
 
         }

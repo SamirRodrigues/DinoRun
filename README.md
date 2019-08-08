@@ -7,7 +7,9 @@ Aquarium Project
 Project made to learn how to make a game as a team.
 The project is a simple infinity run where the main character went back to the past and now he is running for his life.
 
-<img src="images/GameExample.png" height="300">
+<p align="center">
+	<img src="images/GameExample.png" height="300">
+</p>
 
 ## TODO
 * Visual effects

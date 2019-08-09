@@ -58,21 +58,26 @@ public class PlayerAnim : MonoBehaviour
 
     public void NormalRun()
     {
-        anim.SetBool("Scared", false);
-        anim.SetBool("Run", true);
+        if (anim != null)
+        {
+            anim.SetBool("Scared", false);
+            anim.SetBool("Run", true);
+        }
     }
 
 
     public void KilledBySky()
     {
         Player.vivo = false;
-        anim.SetTrigger("DeathBySky");
+        if (anim != null)
+            anim.SetTrigger("DeathBySky");
     }
 
     public void KilledByGround()
     {
         Player.vivo = false;
-        anim.SetTrigger("DeathByGround");
+        if (anim != null)
+            anim.SetTrigger("DeathByGround");
     }
 
     public void TopadaAnim()

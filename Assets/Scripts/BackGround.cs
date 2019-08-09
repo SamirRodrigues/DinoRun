@@ -33,12 +33,12 @@ public class BackGround : MonoBehaviour{
 
     void Update()
     {
-        Cloud1(cloud1);
-        Cloud2(cloud2);
-        Mountain(mountain);
-        Vegetation(vegetation);
-        Trail(trail);
-        ClosedVegetation(closedVegetation);
+        //Cloud1(cloud1);
+        //Cloud2(cloud2);
+        //Mountain(mountain);
+        //Vegetation(vegetation);
+        //Trail(trail);
+        //ClosedVegetation(closedVegetation);
     }
 
     void Cloud1(Renderer cloud1)

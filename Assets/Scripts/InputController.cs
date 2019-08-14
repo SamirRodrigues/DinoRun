@@ -6,16 +6,19 @@ public class InputController : MonoBehaviour
 
     void Update()
     {
-        // Ground attack
-        if (Input.GetKeyDown(KeyCode.Z))
-            attack.Kick();
+        if (attack)
+        {
+            // Ground attack
+            if (Input.GetKeyDown(KeyCode.Z))
+                attack.Kick();
 
-        // Air attack (Head Attack)
-        if (Input.GetKeyDown(KeyCode.X))
-            attack.HeadAttack();
+            // Air attack (Head Attack)
+            if (Input.GetKeyDown(KeyCode.X))
+                attack.HeadAttack();
 
-        //Jump
-        if (Input.GetKeyDown(KeyCode.Space))
-            attack.Jump();
+            //Jump
+            if (Input.GetKeyDown(KeyCode.Space))
+                attack.Jump();
+        }
     }
 }

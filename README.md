@@ -8,16 +8,11 @@ Project made to learn how to make a game as a team.
 The project is a simple infinity run where the main character went back to the past and now he is running for his life.
 
 <p align="center">
-	<img src="images/GameExample.png" height="300">
+	<img src="images/SplashArt.png" height="300">
 </p>
 
 ## TODO
-* Visual effects
-	* Create a dust image to do in particles
-	* Make a function to activate and deactivate the particle system
-* Reorganize the render layers
 * Game Icon
-* Splash art
 * Logo
 * SFX
 * Change the name
@@ -28,7 +23,6 @@ The project is a simple infinity run where the main character went back to the p
 
 ## Need to Improve
 * Collision with the enemy
-* Delay to atk again
 
 ## Authors
 * **João Vitor Filgueira Albuquerque** - [jv-albuquerque](https://github.com/jv-albuquerque)

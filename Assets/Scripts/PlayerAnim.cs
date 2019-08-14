@@ -31,7 +31,8 @@ public class PlayerAnim : MonoBehaviour
             HeadAttackAnim();
             JumpAnim();
         }
-       
+        else if (dustParticle)
+            dustParticle.Stop();
     }
 
     void KickAnim()

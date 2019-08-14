@@ -86,12 +86,12 @@ public class Attack : MonoBehaviour
         if (cooldownAttack.IsFinish() == true) // Verifica se o tempo do cooldown acabou
         {
 
-            if (Input.GetKeyDown(KeyCode.W)) //Caso precione a tecla W
+            if (Input.GetKeyDown(KeyCode.Z)) //Caso precione a tecla Z
             {
                 // Ativa o colisor do Chute
                 if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
                 {
-                    if (Input.GetKey(KeyCode.W))
+                    if (Input.GetKey(KeyCode.Z))
                     {
                         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosKick.position, attackRange, whatIsEnemy); //Cria um trigger para verificar quantos inimigos estão na área de contato
 
@@ -131,12 +131,12 @@ public class Attack : MonoBehaviour
         if (cooldownAttack.IsFinish() == true) // Verifica se o tempo do cooldown acabou
         {
 
-            if (Input.GetKeyDown(KeyCode.Q))    // Caso precione a tecla Q
+            if (Input.GetKeyDown(KeyCode.X))    // Caso precione a tecla X
             {
                 // Ativa o colisor da Cabeçada
                 if (timeBtwAttack <= 0) // Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
                 {
-                    if (Input.GetKey(KeyCode.Q))
+                    if (Input.GetKey(KeyCode.X))
                     {
                         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosHead.position, attackRange, whatIsEnemy); // Cria um trigger para verificar quantos inimigos estão na área de contato
 
@@ -167,7 +167,7 @@ public class Attack : MonoBehaviour
     {
         if (qtdPulo > 0)
         {
-            if (Input.GetKeyDown(KeyCode.E))    // Caso precione a tecla E
+            if (Input.GetKeyDown(KeyCode.Space))    // Caso precione a tecla SpaceBar
             {
                 rbPlayer.AddForce(new Vector2(0, jump_force));
                 qtdPulo -= 1;

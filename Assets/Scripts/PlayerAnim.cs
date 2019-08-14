@@ -34,7 +34,7 @@ public class PlayerAnim : MonoBehaviour
 
     void KickAnim()
     {
-        if (Input.GetKeyDown(KeyCode.W)) //Caso precione a tecla W
+        if (Input.GetKeyDown(KeyCode.Z)) //Caso precione a tecla Z
         {            
             anim.SetTrigger("Kick"); // Inicia a animação de Kick
         }
@@ -42,7 +42,7 @@ public class PlayerAnim : MonoBehaviour
 
     void HeadAttackAnim()
     {
-        if (Input.GetKeyDown(KeyCode.Q))    // Caso precione a tecla Q
+        if (Input.GetKeyDown(KeyCode.X))    // Caso precione a tecla X
         {           
             anim.SetTrigger("Head");  // Inicia a animação de HeadButt (cabeçada)
         }
@@ -50,7 +50,7 @@ public class PlayerAnim : MonoBehaviour
 
     void JumpAnim()
     {
-        if (Input.GetKeyDown(KeyCode.E))    // Caso precione a tecla E
+        if (Input.GetKeyDown(KeyCode.Space))    // Caso precione a tecla SpaceBar
         {
             anim.SetTrigger("Jump");
         }

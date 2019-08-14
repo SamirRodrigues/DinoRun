@@ -11866,7 +11866,7 @@ MonoBehaviour:
   vivo: 1
   theScoreManager: {fileID: 1593658658}
   audioSrc: {fileID: 0}
-  cooldownAttack: 1
+  cooldownAttack: 0.5
 --- !u!1 &8310304762954809072
 GameObject:
   m_ObjectHideFlags: 0

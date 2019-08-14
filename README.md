@@ -18,7 +18,6 @@ The project is a simple infinity run where the main character went back to the p
 * Change the name
 
 ## Bugs
-* Hit trunk is missing
 * Sometimes when try to hit a enemy, doesn't hit or hit but still hitted by the enemy
 
 ## Need to Improve

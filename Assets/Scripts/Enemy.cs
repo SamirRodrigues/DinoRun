@@ -8,11 +8,11 @@ public class Enemy : MonoBehaviour
     public float vel = 3f;    
 
     private bool morto = false;
-    public Collider2D e_Ground; // Responsável por permitir editar o collider
+    private Collider2D e_Ground; // Responsável por permitir editar o collider
 
     // Animação
     private Animator anim;
-    public Renderer Object;
+    private Renderer Object;
 
     // Cooldown config
     public CooldownManeger timeDurationAttack = new CooldownManeger();
@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
     {
         morto = true; // Informa que o inimigo morreu
         timeDurationAttack.Play(3);   // E informa o tempo que a animação vai durar - Animação vai durar 3 segundos
+        e_Ground.enabled = false;
     }
         
 }

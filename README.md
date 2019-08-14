@@ -17,12 +17,6 @@ The project is a simple infinity run where the main character went back to the p
 * SFX
 * Change the name
 
-## Bugs
-* Sometimes when try to hit a enemy, doesn't hit or hit but still hitted by the enemy
-
-## Need to Improve
-* Collision with the enemy
-
 ## Authors
 * **João Vitor Filgueira Albuquerque** - [jv-albuquerque](https://github.com/jv-albuquerque)
 * **Samir Rodrigues** - [SamirRodrigues](https://github.com/SamirRodrigues)

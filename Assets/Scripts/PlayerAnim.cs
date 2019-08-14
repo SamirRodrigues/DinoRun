@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem dustParticle = null;
+
     private int a = 0;
     //Boss interation
 
@@ -52,6 +54,11 @@ public class PlayerAnim : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))    // Caso precione a tecla SpaceBar
         {
+            if (dustParticle)
+            {
+                dustParticle.Stop();
+            }
+
             anim.SetTrigger("Jump");
         }
     }

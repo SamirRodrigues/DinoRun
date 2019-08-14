@@ -25,17 +25,11 @@ public class PlayerAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Player.vivo == true)
-        {
-            KickAnim();
-            HeadAttackAnim();
-            JumpAnim();
-        }
-        else if (dustParticle)
+        if (!Player.vivo && dustParticle)
             dustParticle.Stop();
     }
 
-    void KickAnim()
+    public void KickAnim()
     {
         if (Input.GetKeyDown(KeyCode.Z)) //Caso precione a tecla Z
         {            
@@ -43,7 +37,7 @@ public class PlayerAnim : MonoBehaviour
         }
     }
 
-    void HeadAttackAnim()
+    public void HeadAttackAnim()
     {
         if (Input.GetKeyDown(KeyCode.X))    // Caso precione a tecla X
         {           
@@ -51,7 +45,7 @@ public class PlayerAnim : MonoBehaviour
         }
     }
 
-    void JumpAnim()
+    public void JumpAnim()
     {
         if (Input.GetKeyDown(KeyCode.Space))    // Caso precione a tecla SpaceBar
         {

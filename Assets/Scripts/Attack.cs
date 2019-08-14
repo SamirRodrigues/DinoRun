@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    private PlayerAnim playerAnim = null;
+
     //Jump
     public int qtdPulo = 1;
     public float jump_force;
@@ -33,15 +35,21 @@ public class Attack : MonoBehaviour
 
     //Cooldown para verificar o tempo de duração do ataque
 
-    public CooldownManeger cooldownAttack = new CooldownManeger();
+    [SerializeField] private float cooldownAttack = 1.0f;
+    public Cooldown cdAttack;
 
+
+    private void Awake()
+    {
+        playerAnim = GetComponent<PlayerAnim>();
+
+        cdAttack = new Cooldown(cooldownAttack);
+        cdAttack.Start();
+    }
 
     void Start()
-    {
-       
+    {       
         audioSrc = GetComponent<AudioSource>();
-        cooldownAttack.Play(1.5f); // Duração do Attack (Dura 1,5 segundos)
-
     }
 
 
@@ -50,9 +58,6 @@ public class Attack : MonoBehaviour
 
         if (vivo == true)
         {
-            Kick();
-            HeadAttack();
-            Jump();
             theScoreManager.scoreRun = true;
 
             if (!audioSrc.isPlaying) // Se o áudio não estiver tocando ainda
@@ -81,97 +86,56 @@ public class Attack : MonoBehaviour
     }
 
 
-    void Kick()
+    public void Kick()
     {
-        if (cooldownAttack.IsFinish() == true) // Verifica se o tempo do cooldown acabou
+        if (cdAttack.IsFinished) // Verifica se o tempo do cooldown acabou
         {
+            Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosKick.position, attackRange, whatIsEnemy); //Cria um trigger para verificar quantos inimigos estão na área de contato
 
-            if (Input.GetKeyDown(KeyCode.Z)) //Caso precione a tecla Z
+            if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
             {
-                // Ativa o colisor do Chute
-                if (timeBtwAttack <= 0) //Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
+                for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    if (Input.GetKey(KeyCode.Z))
-                    {
-                        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosKick.position, attackRange, whatIsEnemy); //Cria um trigger para verificar quantos inimigos estão na área de contato
+                    enemiesToDamage[i].GetComponent<Enemy>().Kill(); // Mata todos os inimigos que estão na área
 
-                        if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
-                        {
-                            for (int i = 0; i < enemiesToDamage.Length; i++)
-                            {
-                                enemiesToDamage[i].GetComponent<Enemy>().Kill(); // Mata todos os inimigos que estão na área
-
-                            }
-                        }
-                        else // Caso não tenha inimigos na área
-                        {
-                            //TopadaAnim(); //Chama a animação de topada junto com o boss
-                        }
-                    }
-
-                    timeBtwAttack = startTimeBtwAttack;
                 }
-                else
-                {
-                    timeBtwAttack -= Time.deltaTime;
-                }
-
-
-                // Inicia um cooldown para poder dar o tempo de chamar a animação de corrida
-
-                cooldownAttack.Play(1.5f); // Duração do Attack (Dura 0,5 segundos)
             }
 
+            playerAnim.KickAnim();
+            cdAttack.Start();
         }
 
     }
 
-    void HeadAttack()
+    public void HeadAttack()
     {
-        if (cooldownAttack.IsFinish() == true) // Verifica se o tempo do cooldown acabou
+        if (cdAttack.IsFinished) // Verifica se o tempo do cooldown acabou
         {
+            Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosHead.position, attackRange, whatIsEnemy); // Cria um trigger para verificar quantos inimigos estão na área de contato
 
-            if (Input.GetKeyDown(KeyCode.X))    // Caso precione a tecla X
+            if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
             {
-                // Ativa o colisor da Cabeçada
-                if (timeBtwAttack <= 0) // Se o tempo entre um ataque e outro for menor ou igual a 0, então vocÊ pode atacar
+                for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    if (Input.GetKey(KeyCode.X))
-                    {
-                        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPosHead.position, attackRange, whatIsEnemy); // Cria um trigger para verificar quantos inimigos estão na área de contato
+                    enemiesToDamage[i].GetComponent<Enemy>().Kill(); // Mata todos os inimigos que estão na área
 
-                        if (enemiesToDamage.Length > 0) // Se a quantidade de inimigos dentro da área for maior que 0
-                        {
-                            for (int i = 0; i < enemiesToDamage.Length; i++)
-                            {
-                                enemiesToDamage[i].GetComponent<Enemy>().Kill(); // Mata todos os inimigos que estão na área
-
-                            }
-                        }
-                    }
-
-                    timeBtwAttack = startTimeBtwAttack;
                 }
-                else
-                {
-                    timeBtwAttack -= Time.deltaTime;
-                }
-
-                // Inicia um cooldown para poder dar o tempo de chamar a animação de corrida
-                cooldownAttack.Play(1.5f); // Duração do Attack (Dura 0,5 segundos)
             }
+
+            playerAnim.HeadAttackAnim();
+
+            cdAttack.Start();
         }
     }
 
-    void Jump()
+    public void Jump()
     {
         if (qtdPulo > 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space))    // Caso precione a tecla SpaceBar
-            {
-                rbPlayer.AddForce(new Vector2(0, jump_force));
-                qtdPulo -= 1;
-            }
+            rbPlayer.AddForce(new Vector2(0, jump_force));
+            qtdPulo -= 1;
+
+            playerAnim.JumpAnim();
         }
     }
 
@@ -182,9 +146,6 @@ public class Attack : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(attackPosHead.position, attackRange);
     }
-
- 
-
     
 
     void OnCollisionEnter2D(Collision2D AnotherObj) // Função responsável pelas interações com Colisores

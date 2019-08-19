@@ -20,4 +20,5 @@ The project is a simple infinity run where the main character went back to the p
 ## Authors
 * **João Vitor Filgueira Albuquerque** - [jv-albuquerque](https://github.com/jv-albuquerque)
 * **Samir Rodrigues** - [SamirRodrigues](https://github.com/SamirRodrigues)
-* **Mateus Patricio** - [MateusPatricio](https://github.com/pateusmatricio) 
+* **Mateus Patricio** - [pateusmatricio](https://github.com/pateusmatricio) 
+* **Patrick Brito** - [patrickodev](https://github.com/patrickodev)

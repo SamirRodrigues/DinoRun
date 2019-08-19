@@ -1,5 +1,5 @@
 # DinoRun
-may change this name to "É uma cilada dino"
+may change this name to "É uma cilada dino" or "É cilada dino"
 
 Aquarium Project
 

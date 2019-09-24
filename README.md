@@ -9,6 +9,8 @@ The project is a simple infinity run where the main character went back to the p
 
 <p align="center">
 	<img src="images/SplashArt.png" height="300">
+	<img src="images/GameExample.png" height="300">
+	<br>Game screen shot
 </p>
 
 ## TODO
